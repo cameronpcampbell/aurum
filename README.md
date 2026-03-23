@@ -2,6 +2,8 @@
 
 An experiment of what a future Luau web framework could look like with the new type solver.
 
+DISCLAIMER: not currently a functional framework, merely a proof of concept.
+
 ```luau
 app.route ("GET", "/shop /product /shirts /:id[string] ? :size['lg' | 'md' | 'small']") (function(cx)
     -- The types for the variables below are automatically evaluated from the path above.
