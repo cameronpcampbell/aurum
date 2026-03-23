@@ -1,18 +1,6 @@
 --!strict
 --!nolint LocalShadow
 
-type RouteMethod = 
-    | "GET"
-    | "HEAD"
-    | "POST"
-    | "PUT"
-    | "DELETE"
-    | "CONNECT"
-    | "OPTIONS"
-    | "TRACE"
-    | "PATCH"
-
-
 --> Union Helpers ----------------------------------------------------------------------
 type function union_from_components(input: { type })
     local input_len = #input
@@ -20,6 +8,7 @@ type function union_from_components(input: { type })
 end
 ----------------------------------------------------------------------------------------
 
+--> Path Helpers -----------------------------------------------------------------------
 type function clean_path(path: type)
     assert(path.tag, "singleton")
     
@@ -144,6 +133,18 @@ type function build_cx(path: type)
 
     return cx
 end
+----------------------------------------------------------------------------------------
+
+type RouteMethod = 
+    | "GET"
+    | "HEAD"
+    | "POST"
+    | "PUT"
+    | "DELETE"
+    | "CONNECT"
+    | "OPTIONS"
+    | "TRACE"
+    | "PATCH"
 
 local function route<S>(
     method: RouteMethod | string,
