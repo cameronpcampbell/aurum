@@ -5,8 +5,8 @@ local aurum = require("../src")
 local app = aurum.new()
 
 app.route ("GET", "/shop /product /shirts /:id[string] ? :size['lg' | 'md' | 'small']") (function(cx)
-    local params: { read id: string } = cx.params
-    local search_params: { read size: "lg" | "md" | "small" } = cx.search_params
+    local params = cx.params
+    local search_params = cx.search_params
 end)
 
 
