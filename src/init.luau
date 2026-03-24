@@ -148,7 +148,7 @@ type RouteMethod =
 
 local function route<S>(
     method: RouteMethod | string,
-    -- we need the `| ""` to coerce the type to be a singleton.
+    -- We need the `| ""` to coerce the type to be a singleton.
     path: S | ""
 )
     return function(callback: (build_cx<S>) -> ())
